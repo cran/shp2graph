@@ -1,0 +1,4 @@
+useDynLib(shp2graph)
+import(maptools)
+import(igraph)
+export(Directed,SL.extraction,ME.simplification,PN.amalgamation,Degree.list,Minus.DegreeL,Redef.functions,is.exception,points2network,Nearest.nodes,footpoint.nodes,Add.nodes,virtualedge.nn,point.in.bbox,ptsinnt.view,readshpnw,Update.nodelist,Update.edgelist,Nodes.coordinates,extend.eadf,nt.connect,nel2igraph)
