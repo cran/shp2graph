@@ -6,7 +6,7 @@ This function is to produce an \dQuote{igraph} object using the extracted
 nodelist and edgelist from a spatial network.
 }
 \usage{
-nel2igraph(nodelist, edgelist, weight = NULL, eadf = NULL, mode = "all")
+nel2igraph(nodelist, edgelist, weight = NULL, eadf = NULL, Directed = FALSE)
 }
 \arguments{
   \item{nodelist}{A \dQuote{nodelist} object}
@@ -15,9 +15,7 @@ nel2igraph(nodelist, edgelist, weight = NULL, eadf = NULL, mode = "all")
                 of which the length equals to the number of edges;}
   \item{eadf}{Attribute data frame for all the edges, of which the number of 
               rows equals to the number of edges;}
-  \item{mode}{Character scalar, it specifies whether the graph to create is 
-  undirected (\dQuote{all} or \dQuote{total}) or directed; and in the latter case, whether it 
-  contains the outgoing (\dQuote{out}) or the incoming (\dQuote{in}) neighbors of the vertices.}  
+  \item{Directed}{Logical scalar, whether to create a directed graph.}  
 }
 \value{
   \item{gr}{An object of \dQuote{igraph}} 
@@ -35,8 +33,8 @@ data(ORN)
 rtNEL<-readshpnw(rn, ELComputed=TRUE)
 #Add the edge length as the weight for graph
 igr<-nel2igraph(rtNEL[[2]],rtNEL[[3]],weight=rtNEL[[4]])
-coord<-cbind(get.vertex.attribute(igr, "X"), get.vertex.attribute(igr, "Y"))
-plot.igraph(igr)
+plot(igr, vertex.label=NA, vertex.size=2,vertex.size2=2)
+plot(rn)
 }
 \author{Binbin Lu \email{lubinbin220@gmail.com}}
 \keyword{igraph}
