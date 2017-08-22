@@ -1,16 +1,16 @@
 \name{nodelist}
 \alias{nodelist}
-\title{An object defined for extracted nodes from a network}
+\title{A designed structure to denote nodes from a spatial network}
 \description{
-This is a structure for nodes extracted from the spatial network, and each node 
-cooresponds to one row in the object; for each row, the structure is defined 
-as [NodeID,coordinate(X,Y)].
+\dQuote{nodelist} is an interchange structure of nodes from a spatial network into 
+an \dQuote{igraph} object. It is a two-column data frame, of which each row is 
+designed as [NodeID,coordinate(X,Y)].
 }
 \details{
-This list is the immediate result of extracting nodes from a \dQuote{SpatialLines} 
-or \dQuote{SpatialLinesDataFrame} object, see \link{readshpnw}. As a transition 
-object, it is a necessary input for many functions in this package, 
-like \link{Degree.list}, \link{ME.simplification}, \link{Nodes.coordinates}. 
+Both \dQuote{\link{nodelist}} and \dQuote{\link{edgelist}} are interchange structures
+of nodes and edges extracted from a spatial network in a \dQuote{SpatialLines} or 
+\dQuote{SpatialLinesDataFrame} object. They are always concerned together, and returned
+by the function \link{readshpnw} as initial results for the following steps.
 }
 \author{Binbin Lu \email{lubinbin220@gmail.com}}
 \keyword{node}

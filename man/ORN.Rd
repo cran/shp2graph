@@ -2,9 +2,9 @@
 \alias{ORN}
 \alias{rn}
 \docType{data}
-\title{Ontario Road Network data set (SpatialLinesDataFrame)}
+\title{Ontario road network data (SpatialLinesDataFrame)}
 \description{
-  This data set is a part of Ontario Road Network data set downloaded from 
+  This data set is a part of Ontario road network data set downloaded from 
   Ontario Ministry of Natural Resources.
 }
 \usage{data(ORN)}
@@ -19,8 +19,4 @@
   Available: \url{http://www.geographynetwork.ca/website/orn/viewer.htm}, 2006, 
   (Accessed Dec. 4, 2009)
 }
-\examples{
-data(ORN)
-plot(rn)
-}
-\keyword{datasets}
+\keyword{road network data}

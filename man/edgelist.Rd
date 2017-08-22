@@ -1,16 +1,16 @@
 \name{edgelist}
 \alias{edgelist}
-\title{A structure for edge information of a network}
+\title{A designed structure to denote edges from a spatial network}
 \description{
-This is an intergradation of edges from spatial data to graph data, and each 
-edge cooresponds to one row in the object, of which the row structure is
+\dQuote{edgelist} is an interchange structure of edges from a spatial network into 
+an \dQuote{igraph} object. It is a three-column matrix, of which each row is 
 designed as [EdgeID,NodeID(from),NodeID(to)].
 }
 \details{
-This object is the immediate result of establishing edges between nodes from a 
-\dQuote{SpatialLines} or \dQuote{SpatialLinesDataFrame} object, see 
-\link{readshpnw}. As a transition object, it is a necessary input for many 
-functions in this package. 
+Both \dQuote{\link{nodelist}} and \dQuote{\link{edgelist}} are interchange structures
+of nodes and edges extracted from a spatial network in a \dQuote{SpatialLines} or 
+\dQuote{SpatialLinesDataFrame} object. They are always concerned together, and returned
+by the function \link{readshpnw} as initial results for the following steps.
 }
 \note{
 If the parameter \dQuote{Detailed} specified in \link{readshpnw} is TRUE, all 

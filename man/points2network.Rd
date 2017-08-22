@@ -5,50 +5,21 @@
 \alias{Add.nodes}
 \alias{virtualedge.nn}
 \alias{point.in.bbox}
-\title{Integrate a point data set with a network}
+\title{Integrate a point data set into a network}
 \description{
-In order to associate a  point data set with a given network, this function finds a 
-corresponding node for each point in the data set under a certain rule(see details).
+A function to integrate an individual point data set into a network under different
+rules (see details below).
 }
 \usage{
-points2network(ntdata,pointsxy,mapping.method=1,ELComputed=FALSE,longlat=F,
+points2network(ntdata,pointsxy,approach=1,ELComputed=FALSE,longlat=F,
                Detailed=F, ea.prop=NULL)
 }
 \arguments{                                                                   
-  \item{ntdata}{a \dQuote{SpatialLinesDataFrame} object}
-  \item{pointsxy}{A two column matrix contains X-Y coordinates of the points.}
-  \item{mapping.method}{Mapping methods between the given points 
-                        and network will be used, see the details below}
-  \item{ELComputed}{if TRUE, the edge length will be computed}
-  \item{longlat}{if TRUE, use distances on an ellipse with WGS84 parameters}
-  \item{Detailed}{if TRUE, all the points of polylines will be regarded as nodes
-                 in the network; if FALSE, only endpoints of polylines are treated 
-                 as nodes}
-  \item{ea.prop}{A vector contains 1 or 0 values (the length equals to the number 
-                 of arributes of the \dQuote{ntdata}):
-                 
-                 1: the corresponding attribute will be kept and re-orgnised for 
-                 the new network;
-                 
-                 0: the corresponding attribute will not be kept.}  
-}
-\value{
-A list consisted of:
-  \item{nodelist}{A \dQuote{nodelist} object}
-  \item{edgelist}{An \dQuote{edgelist} object}
-  \item{CoorespondIDs}{A vector contains cooresponding node IDs for each point}
-  \item{nodexlist}{A vector contains X-coordinates of all the nodes}
-  \item{nodeylist}{A vector contains Y-coordinates of all the nodes} 
-  \item{Eadf}{a data frame of edge attributes, dataframe(EdgeID,...
-             (attributes extracted from original file)...)}
-  \item{VElist}{A list of virtual edges if existed}
-  \item{Edgelength}{If ELComputed is TRUE, Edgelength will be a vector consisted
-   of edge lengths cooresponding to each edge, else it will be NULL}
-   
-}
-\details{
-The value of mapping.method can be 1,2,3 or 4, which respectively means:
-
+  \item{ntdata}{A \dQuote{SpatialLinesDataFrame} or \dQuote{SpatialLines} object}
+  \item{pointsxy}{A two-column matrix of point coordinates (X, Y)}
+  \item{approach}{specified by an integer ranging from 1 to 4 to define the approach
+  for integration:
+  
 1: Mapping each point to the nearest node in the network/graph
 
 2: Mapping each point to the nearest point (add them as nodes if they are not)
@@ -56,7 +27,33 @@ The value of mapping.method can be 1,2,3 or 4, which respectively means:
    
 3: Add a new edge(virtual edge) between each point and the nearest node
 
-4: Add a new edge(virtual edge) between each point and the nearest point
+4: Add a new edge(virtual edge) between each point and the nearest point 
+}
+  \item{ELComputed}{If TRUE, the length of each edge will be calculated and returned}
+  \item{longlat}{If TRUE, distances on an ellipse with WGS84 parameters will be returned}
+  \item{Detailed}{If TRUE, all the vertices within the polylines of a spatial network
+   will be recognised as nodes; if FALSE, only two endpoints of each polyline are treated 
+                 as nodes}
+  \item{ea.prop}{A vector (of the length equalling to the number of edge attributes in
+  in the network \dQuote{ntdata}) with values of 1 or 0:
+                 
+                 1: the corresponding column in the data frame will be kept for 
+                 the new network;
+                 
+                 0: the corresponding column in the data frame will not be kept.}  
+}
+\value{
+A list consisted of:
+  \item{nodelist}{A \dQuote{\link{nodelist}} object}
+  \item{edgelist}{An \dQuote{\link{edgelist}} object}
+  \item{CoorespondIDs}{A vector of the cooresponding node ID for each point in \dQuote{pointsxy}}
+  \item{nodexlist}{A vector contains X-coordinates of all the nodes}
+  \item{nodeylist}{A vector contains Y-coordinates of all the nodes} 
+  \item{Eadf}{A data frame of attributes of the returned edges, of which the structure is
+   a data frame with [EdgeID,(attributes inherited from the input network data)]}
+  \item{VElist}{A list of virtual edges if added, i.e. approaches 3 and 4 are used}
+  \item{Edgelength}{If \dQuote{ELComputed} is TRUE, lengths of all the edges will be 
+  returned as a numeric vector; otherwise it will be NULL.}
 }
 \seealso{\code{\link{ptsinnt.view}}}
 \examples{
@@ -66,20 +63,20 @@ pts<-spsample(rn, 100, type="random")
 ptsxy<-coordinates(pts)[,1:2]
 ptsxy<-cbind(ptsxy[,1]+0.008,ptsxy[,2]+0.008)
 #Mapping each point to the nearest node in the network/graph
-res<-points2network(ntdata=rn,pointsxy=ptsxy, mapping.method=1)
+res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=1)
 ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy,
              CoorespondIDs=res[[3]])
 #Mapping each point to the nearest point (add them as nodes if they are not) on 
 #the network
-res<-points2network(ntdata=rn,pointsxy=ptsxy, mapping.method=2,ea.prop=rep(0,37))
+res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=2,ea.prop=rep(0,37))
 ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]]) 
 #Add a new edge(Virtual edge) between each point and the nearest node
-res<-points2network(ntdata=rn,pointsxy=ptsxy, mapping.method=3,ea.prop=rep(0,37))
+res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=3,ea.prop=rep(0,37))
 VElist<-res[[7]]
 ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]], 
              VElist=VElist)
 #Add a new edge(Virtual edge) between each point and the nearest point
-res<-points2network(ntdata=rn,pointsxy=ptsxy, mapping.method=4,ea.prop=rep(0,37))
+res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=4,ea.prop=rep(0,37))
 VElist<-res[[7]]
 ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]],
              VElist=VElist) 

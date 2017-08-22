@@ -1,20 +1,20 @@
-#mapping.method:
+#approach:
 #1 means "Mapped to the nearest node"
 #2 means "Mapped to the foot point (as an new node) of the nearest edge"
 #3 means "Add virtual edges"
-points2network<-function(ntdata,pointsxy,mapping.method=1,ELComputed=FALSE, longlat=F,Detailed=F, ea.prop=NULL)
+points2network<-function(ntdata,pointsxy,approach=1,ELComputed=FALSE, longlat=F,Detailed=F, ea.prop=NULL)
 {
   VElist<-NULL
   if(!is(ntdata,"SpatialLinesDataFrame"))
      stop("Input data is not a proper spatial network data frame, here only SpatialLinesDataFrame is accepted.")
-  if (mapping.method%%1!=0)
-     stop("Only integer 1,2,3 is accepted to specify a mapping.method.")
+  if (approach%%1!=0)
+     stop("Only integer 1,2,3 is accepted to specify a approach.")
   else
-      if (mapping.method>4 ||mapping.method<1)
-      stop("No matched mapping.method available.")
-  if (mapping.method==1)
+      if (approach>4 ||approach<1)
+      stop("No matched approach available.")
+  if (approach==1)
   {
-     res<-readshpnw(data=ntdata, Detailed=Detailed, ELComputed=ELComputed)
+     res<-readshpnw(ntdata=ntdata, Detailed=Detailed, ELComputed=ELComputed)
      Nodeslist<-res[[2]]
      Edgeslist<-res[[3]]
      edgelength<-res[[4]]
@@ -23,7 +23,7 @@ points2network<-function(ntdata,pointsxy,mapping.method=1,ELComputed=FALSE, long
      Eadf<-res[[5]]
      CoorespondIDs<-Nearest.nodes(pointsxy, Nodeslist,longlat=longlat)
   }
-  else if (mapping.method==2)
+  else if (approach==2)
   {
     res<-footpoint.nodes(ntdata=ntdata,pointsxy=pointsxy, longlat=longlat,ea.prop=ea.prop, ELComputed=ELComputed)
     Nodeslist<-res[[1]]
@@ -34,9 +34,9 @@ points2network<-function(ntdata,pointsxy,mapping.method=1,ELComputed=FALSE, long
     Eadf<-res[[5]]
     edgelength<-res[[7]]
   }
-  else if (mapping.method==3)
+  else if (approach==3)
   {
-     res<-readshpnw(data=ntdata, ELComputed=T, Detailed=Detailed)
+     res<-readshpnw(ntdata=ntdata, ELComputed=T, Detailed=Detailed)
      Nodeslist<-res[[2]]
      Edgeslist<-res[[3]]
      Nodexlist<-res[[6]]
@@ -111,7 +111,7 @@ footpoint.nodes<-function(ntdata,pointsxy, longlat=F, ea.prop, ELComputed=FALSE)
   if (longlat)
     warning("If the spatial coordinate is not projected to the Euclidean system, the acquired footpoints won't be accurate")
   Coords<-coordinates(ntdata)
-  res<-readshpnw(data=ntdata, longlat<-longlat)
+  res<-readshpnw(ntdata=ntdata, longlat<-longlat)
   nodelist<-res[[2]]
   nodexlist<-res[[6]]
   nodeylist<-res[[7]]

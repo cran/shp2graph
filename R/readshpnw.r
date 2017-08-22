@@ -1,16 +1,16 @@
-readshpnw<-function(data=list(), ELComputed=FALSE, longlat=FALSE, Detailed=FALSE, ea.prop=NULL)
+readshpnw<-function(ntdata, ELComputed=FALSE, longlat=FALSE, Detailed=FALSE, ea.prop=NULL)
 #The function returns a data list composed of "nodelist", "edgelist" and "data frame of edge attributes" 
 {
-  if(!is(data,"SpatialLinesDataFrame"))
+  if(!is(ntdata,"SpatialLinesDataFrame"))
      stop("Input data is not a proper spatial network data frame, here only SpatialLinesDataFrame is accepted.")
-  Coords<-coordinates(data)
+  Coords<-coordinates(ntdata)
   numEdges<-length(Coords)
   nodelist<-c()
   edgelist<-c()
-  Eadf<-data.frame(data)
+  Eadf<-data.frame(ntdata)
   Eadf.names<-names(Eadf)
   edgeID.vec<-1:numEdges
-  Eadf<-data.frame(edgeID.vec,data.frame(data))
+  Eadf<-data.frame(edgeID.vec,data.frame(ntdata))
   names(Eadf)<-c("EdgeID", Eadf.names)
   id.idx<-1
   if (Detailed)

@@ -2,45 +2,43 @@
 \alias{readshpnw}
 \title{Read a network from a \dQuote{SpatialLines} or \dQuote{SpatialLinesDataFrame} object}
 \description{
-This function is to split nodes and edges from a \dQuote{SpatialLines} or 
-\dQuote{SpatialLinesDataFrame} object, and return \dQuote{nodelist} and \dQuote{edgelist}.
+A function to read a spatial network from a \dQuote{SpatialLines} or \dQuote{SpatialLinesDataFrame} object,
+and resolve it into a  \dQuote{\link{nodelist}} and \dQuote{\link{edgelist}} for the following conversion.
 }
 \usage{
-readshpnw(data=list(), ELComputed=FALSE, longlat=FALSE, Detailed=FALSE, ea.prop=NULL)
+readshpnw(ntdata, ELComputed=FALSE, longlat=FALSE, Detailed=FALSE, ea.prop=NULL)
 }
 \arguments{
-  \item{data}{A \dQuote{SpatialLines} or \dQuote{SpatialLinesDataFrame} object;}
-  \item{ELComputed}{if TRUE, the edge length will be computed}
-  \item{longlat}{If TRUE, distance will be calculated on an ellipse with WGS84 
-                 parameters;}
-  \item{Detailed}{Default is FALSE, only two endpoints (starting and ending) of 
-                  each polyline are recognised as nodes and collected in the 
-                  \dQuote{nodelist}; If TRUE, all the endpoints will be recognised
-                  as nodes and collected.}
-  \item{ea.prop}{If data is a \dQuote{SpatialLinesDataFrame} object and \dQuote{Detailed} 
-  is TRUE, the ea.prop shoul be a given as a vector (of lenght equal to the number 
-  of columns in data.frame(data)) with values 0 or 1, for defining the rules of 
-  re-attributing the new edges: 0 means that equalization is used for the arrtibute
-  inherition from the original data;  1 implies that weighted-mean based on the 
-  edge length is adopted.}  
+  \item{ntdata}{A \dQuote{SpatialLinesDataFrame} or \dQuote{SpatialLines} object}
+  \item{ELComputed}{If TRUE, the length of each edge will be calculated and returned}
+  \item{longlat}{If TRUE, distances on an ellipse with WGS84 parameters will be returned}
+  \item{Detailed}{If TRUE, all the vertices within the polylines of a spatial network
+                  will be recognised as nodes; if FALSE, only two endpoints of 
+                  each polyline are treated as nodes}
+  \item{ea.prop}{A vector (of the length equalling to the number of edge attributes in
+                 in the network \dQuote{ntdata}) with values of 1 or 0:
+                 
+                 1: the corresponding column in the data frame will be kept for 
+                 the new network;
+                 
+                 0: the corresponding column in the data frame will not be kept.} 
 }
 \value{
 A list consisted of:
-  \item{Detailed}{TRUE if the output is under a \dQuote{Detailed} mode, and 
-                  \dQuote{edgelist} will have a different structure;}
-  \item{nodelist}{A \dQuote{nodelist} object}
-  \item{edgelist}{An \dQuote{edgelist} object}
-  \item{Edgelength}{A vector (of length equal to the number of edges) of edge 
-                    lengths if \dQuote{ELComputed} is TRUE;}
-  \item{Eadf}{A data frame of edge attributes, [EdgeID,...(items extracted from 
-             the \dQuote{SpatialLinesDataFrame} object )...]}
+  \item{Detailed}{TRUE if the output is under a \dQuote{Detailed} mode;}
+  \item{nodelist}{A \dQuote{\link{nodelist}} object}
+  \item{edgelist}{An \dQuote{\link{edgelist}} object}
+  \item{Edgelength}{If \dQuote{ELComputed} is TRUE, lengths of all the edges will be 
+                    returned as a numeric vector; otherwise it will be NULL.}
+  \item{Eadf}{A data frame of attributes of the returned edges, of which the structure is
+   a data frame with [EdgeID,(attributes inherited from the input network data)]}
   \item{nodexlist}{A vector contains X-coordinates of all the nodes}
   \item{nodeylist}{A vector contains Y-coordinates of all the nodes}  
 }
 \details{
-This function is the first step to convert a newtwork data into an object of 
-\dQuote{igraph}. With a given \dQuote{SpatialLines} or \dQuote{SpatialLinesDataFrame},
-it produces a {nodelist}, \dQuote{edgelist}, and data frame for edge attributes. 
+This function plays the first step to convert a spatial network (in a \dQuote{SpatialLines} 
+or \dQuote{SpatialLinesDataFrame} object) into an \dQuote{igraph} object by returning
+a \dQuote{\link{nodelist}} and \dQuote{\link{edgelist}}. 
 }
 \examples{
 data(ORN)
