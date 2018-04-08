@@ -42,11 +42,11 @@ a \dQuote{\link{nodelist}} and \dQuote{\link{edgelist}}.
 }
 \examples{
 data(ORN)
-rtNEL<-readshpnw(rn)
+rtNEL<-readshpnw(ORN.nt)
 nl<-rtNEL[[2]]
 el<-rtNEL[[3]]
 #Compute edge length
-rtNEL<-readshpnw(rn, ELComputed=TRUE)
+rtNEL<-readshpnw(ORN.nt, ELComputed=TRUE)
 edgelength<-rtNEL[[4]]
 eadf<-rtNEL[[5]]
 }

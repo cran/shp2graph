@@ -328,15 +328,16 @@ virtualedge.nn<-function(nodelist, edgeslist, nodexlist, nodeylist, pointsxy, ed
 point.in.bbox<-function(pointxy,bbox)
 {
   if (pointxy[1]<=bbox[1,2]&&pointxy[1]>=bbox[1,1])
+  {
      if (pointxy[2]<=bbox[2,2]&&pointxy[2]>=bbox[2,1])
          res<-TRUE
      else
          {
          res<-FALSE
-         break
          }
+  }
   else
-         res<-FALSE
+      res<-FALSE
   res  
 }
 

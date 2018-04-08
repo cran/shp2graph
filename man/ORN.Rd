@@ -1,6 +1,6 @@
 \name{ORN}
 \alias{ORN}
-\alias{rn}
+\alias{ORN.nt}
 \docType{data}
 \title{Ontario road network data (SpatialLinesDataFrame)}
 \description{
@@ -9,7 +9,7 @@
 }
 \usage{data(ORN)}
 \format{
- A \dQuote{SpatialLinesDataFrame} object.
+ A \dQuote{SpatialLinesDataFrame} object named \dQuote{ORN.nt}.
   }
 \source{
   \url{http://www.geographynetwork.ca/website/orn/viewer.htm}
@@ -19,4 +19,4 @@
   Available: \url{http://www.geographynetwork.ca/website/orn/viewer.htm}, 2006, 
   (Accessed Dec. 4, 2009)
 }
-\keyword{road network data}
+\keyword{Road network data, example}

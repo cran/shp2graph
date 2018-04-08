@@ -29,11 +29,11 @@ the package \pkg{igraph}.
 }
 \examples{
 data(ORN)
-rtNEL<-readshpnw(rn, ELComputed=TRUE)
+rtNEL<-readshpnw(ORN.nt, ELComputed=TRUE)
 #Add the edge length as the weight for graph
 igr<-nel2igraph(rtNEL[[2]],rtNEL[[3]],weight=rtNEL[[4]])
 plot(igr, vertex.label=NA, vertex.size=2,vertex.size2=2)
-#plot(rn)
+#plot(ORN.nt)
 }
 \author{Binbin Lu \email{lubinbin220@gmail.com}}
 \keyword{igraph}

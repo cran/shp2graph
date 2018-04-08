@@ -26,11 +26,15 @@ void nodeExisted(double *nodeXlist,double *nodeYlist,int *n,double *X,double *Y,
 		 {
 			 ny=nodeYlist[i];
 			 if (ny==Y[0])
-			    {tag[0]=i+1;
-			     break;}
+			 {
+				 tag[0]=i+1;
+			     break;
+				 }
 			 }
 		 else
-		    {continue;}
+		 {
+			 continue;
+			 }
 		   }
 	}
 

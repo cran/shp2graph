@@ -59,26 +59,26 @@ A list consisted of:
 \examples{
 \dontrun{
 data(ORN)
-pts<-spsample(rn, 100, type="random")
+pts<-spsample(ORN.nt, 100, type="random")
 ptsxy<-coordinates(pts)[,1:2]
 ptsxy<-cbind(ptsxy[,1]+0.008,ptsxy[,2]+0.008)
 #Mapping each point to the nearest node in the network/graph
-res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=1)
+res<-points2network(ntdata=ORN.nt,pointsxy=ptsxy, approach=1)
 ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy,
              CoorespondIDs=res[[3]])
 #Mapping each point to the nearest point (add them as nodes if they are not) on 
 #the network
-res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=2,ea.prop=rep(0,37))
-ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]]) 
+res<-points2network(ntdata=ORN.nt,pointsxy=ptsxy, approach=2,ea.prop=rep(0,37))
+ptsinnt.view(ntdata=ORN.nt, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]]) 
 #Add a new edge(Virtual edge) between each point and the nearest node
-res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=3,ea.prop=rep(0,37))
+res<-points2network(ntdata=ORN.nt,pointsxy=ptsxy, approach=3,ea.prop=rep(0,37))
 VElist<-res[[7]]
-ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]], 
+ptsinnt.view(ntdata=ORN.nt, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]], 
              VElist=VElist)
 #Add a new edge(Virtual edge) between each point and the nearest point
-res<-points2network(ntdata=rn,pointsxy=ptsxy, approach=4,ea.prop=rep(0,37))
+res<-points2network(ntdata=ORN.nt,pointsxy=ptsxy, approach=4,ea.prop=rep(0,37))
 VElist<-res[[7]]
-ptsinnt.view(ntdata=rn, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]],
+ptsinnt.view(ntdata=ORN.nt, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res[[3]],
              VElist=VElist) 
 }
 }
