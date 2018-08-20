@@ -1,0 +1,22 @@
+citHeader("To cite shp2graph in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{Shp2graph}: Tools to Convert a Spatial Network into an Igraph Graph in R",
+  author       = personList(as.person("Binbin Lu"),
+                   as.person("Huabo Sun"),
+                   as.person("Miaozhong Xu"),
+                   as.person("Paul Harris"),
+                   as.person("Martin Charlton")),
+  journal      = "ISPRS International Journal of Geo-Information",
+  year         = "2018",
+  volume       = "7",
+  number       = "8",
+  pages        = "293",
+  url          = "https://doi.org/10.3390/ijgi7080293",
+
+  textVersion  =
+  paste("Binbin Lu, Huabo Sun, Paul Harris, Miaozhong Xu, Martin Charlton (2018).",
+        "Shp2graph: Tools to Convert a Spatial Network into an Igraph Graph in R.",
+        "ISPRS International Journal of Geo-Information, 7(8), 293.",
+        "URL https://doi.org/10.3390/ijgi7080293")
+)
