@@ -13,7 +13,7 @@ SL.extraction(nodelist, edgelist, eadf=NULL,Directed=F, DegreeL=NULL,
   \item{edgelist}{An \dQuote{\link{edgelist}} object}
   \item{eadf}{ A data frame of attributes corresponding to all the edges;}
   \item{Directed}{TRUE if edges are directed, FALSE otherwise;}  
-  \item{DegreeL}{DegreeL}{An integer vector of degrees for each node in the given
+  \item{DegreeL}{An integer vector of degrees for each node in the given
                 \dQuote{\link{nodelist}}, and it could be ignored if edges are directed}
   \item{InDegreeL}{An integer vector of In-degrees for each node 
                   in the given \dQuote{\link{nodelist}}, and it could be ignored 
@@ -47,6 +47,6 @@ An edge is recognised as a structure of self-loop when it starts and ends at the
 same point (location).
 }
 \seealso{\code{\link{PN.amalgamation}}, \code{\link{ME.simplification}}}
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
 
 \keyword{self-loop}

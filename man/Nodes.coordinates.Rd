@@ -14,5 +14,5 @@ Nodes.coordinates(nodelist)
 \value{
   \item{Nodesxy}{A two-column matrix (X, Y)} 
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{coordinate, node}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{node coordinates}

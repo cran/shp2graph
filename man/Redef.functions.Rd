@@ -25,4 +25,5 @@ It is easy to include more specific methods for attribute redefinition via
 incorporating the corresponding functions. In other words, you can define more 
 methods by numbering them with 5, 6, etc.  
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{attribute redefinition}

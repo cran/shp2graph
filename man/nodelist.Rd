@@ -12,5 +12,5 @@ of nodes and edges extracted from a spatial network in a \dQuote{SpatialLines} o
 \dQuote{SpatialLinesDataFrame} object. They are always concerned together, and returned
 by the function \link{readshpnw} as initial results for the following steps.
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{node}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{node list}

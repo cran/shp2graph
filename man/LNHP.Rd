@@ -59,4 +59,3 @@
   regression with a non-Euclidean distance metric: a case study using hedonic house 
   price data. International Journal of Geographical Information Science, 28, 660-681.
 }
-\keyword{Point data, example}

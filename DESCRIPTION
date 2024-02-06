@@ -1,16 +1,16 @@
 Package: shp2graph
-Version: 0-5
-Date: 2018-08-20
-Title: Convert a SpatialLinesDataFrame Object to an 'igraph'-Class
-        Object
+Version: 1-0
+Date: 2024-02-06
+Title: Convert a 'SpatialLinesDataFrame' -Class Object to an
+        'igraph'-Class Object
 Author: Binbin Lu
-Maintainer: Binbin Lu <lubinbin220@gmail.com>
+Maintainer: Binbin Lu <binbinlu@whu.edu.cn>
 Depends: R (>= 3.0.0),igraph
-Imports: methods, maptools,sp
-Description: Functions for converting network data from a
-        SpatialLinesDataFrame object to an 'igraph'-Class object.
+Imports: methods,sp
+Description: Functions for converting and processing network data from a
+        'SpatialLinesDataFrame' -Class object to an 'igraph'-Class object.
 License: GPL (>= 2)
 Repository: CRAN
 NeedsCompilation: yes
-Packaged: 2018-08-20 08:30:25 UTC; Administrator
-Date/Publication: 2018-08-20 09:20:03 UTC
+Packaged: 2024-02-06 11:12:05 UTC; Lenovo
+Date/Publication: 2024-02-06 17:50:02 UTC

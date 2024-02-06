@@ -1,5 +1,4 @@
 useDynLib(shp2graph)
-import(maptools)
 import(igraph)
 importFrom("grDevices", "rainbow")
 importFrom("methods", "is", "slot")

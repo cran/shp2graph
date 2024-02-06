@@ -82,5 +82,5 @@ ptsinnt.view(ntdata=ORN.nt, nodelist=res[[1]], pointsxy=ptsxy, CoorespondIDs=res
              VElist=VElist) 
 }
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{spatial, graph}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{point-network projection}

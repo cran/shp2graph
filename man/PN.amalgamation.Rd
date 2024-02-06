@@ -79,5 +79,5 @@ ptcoords<-Nodes.coordinates(res.pn[[1]])
 #points(Nodes.coordinates(rtNEL[[2]]), col="red")
 }
 \seealso{\code{\link{SL.extraction}}, \code{\link{ME.simplification}}}
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{pseudo, node}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{pseudo node}

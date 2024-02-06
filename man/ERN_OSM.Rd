@@ -22,4 +22,3 @@ data(ERN_OSM_correct)
 \references{
   OpenStreetMap. 2014. Estevan road network. ed. O. community.
 }
-\keyword{Road network data, connectivity,example}

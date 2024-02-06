@@ -21,5 +21,5 @@ the \dQuote{SpatialLinesDataFrame} object, the original edge ID is also kept and
 the row structure will be [EdgeID,eid,NodeID(from),NodeID(to)], in which EdgeID 
 refers to the new edge id while eid represents the original edge ID.  
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
 \keyword{edge}

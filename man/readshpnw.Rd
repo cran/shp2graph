@@ -50,5 +50,5 @@ rtNEL<-readshpnw(ORN.nt, ELComputed=TRUE)
 edgelength<-rtNEL[[4]]
 eadf<-rtNEL[[5]]
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{spatial, graph}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{spatial network extraction}

@@ -17,5 +17,5 @@ be reached from each other. A map will be plotted spontaneously with differet ca
 (i.e. self-connected parts) in distinct colors. Finally, the self-connected part with
 the most nodes will be returned as a new \dQuote{SpatialLinesDataFrame} object. 
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{spatial, graph}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{network topology}

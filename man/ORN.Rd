@@ -12,11 +12,11 @@
  A \dQuote{SpatialLinesDataFrame} object named \dQuote{ORN.nt}.
   }
 \source{
-  \url{http://www.geographynetwork.ca/website/orn/viewer.htm}
+  \url{https://www.geographynetwork.ca/website/orn/viewer.htm}
 }
 \references{
   Peterborough, ON: Ontario Ministry of Natural Resources, Ontario Road Network. 
-  Available: \url{http://www.geographynetwork.ca/website/orn/viewer.htm}, 2006, 
+  Available: \url{https://www.geographynetwork.ca/website/orn/viewer.htm}, 2006, 
   (Accessed Dec. 4, 2009)
 }
-\keyword{Road network data, example}
+\keyword{Road network data}

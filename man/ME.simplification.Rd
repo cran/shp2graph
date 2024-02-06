@@ -28,7 +28,7 @@ ME.simplification(nodelist, edgelist, eadf=NULL, ea.prop=NULL, Directed=F,
   }
                  
   \item{Directed}{TRUE if edges are directed, FALSE otherwise;}  
-  \item{DegreeL}{DegreeL}{An integer vector of degrees for each node in the given
+  \item{DegreeL}{An integer vector of degrees for each node in the given
                 \dQuote{\link{nodelist}}, and it could be ignored if edges are directed}
   \item{InDegreeL}{An integer vector of In-degrees for each node 
                   in the given \dQuote{\link{nodelist}}, and it could be ignored 
@@ -63,6 +63,6 @@ of nodes. Note that the order of the nodes should be also the same when edges ar
 directed.
 }
 \seealso{\code{\link{SL.extraction}}, \code{\link{PN.amalgamation}}}
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
 
-\keyword{spatial, graph}
+\keyword{simplified graph}

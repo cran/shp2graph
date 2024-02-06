@@ -30,5 +30,5 @@ are double-way. This suitation makes it complex to define directed or undirected
  are left in their directed forms. In other words, all the edges returned by this function will 
  be directed, and used to be construct a directed graph.
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{directed, graph}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{directed graph}

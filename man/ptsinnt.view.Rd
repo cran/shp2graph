@@ -35,4 +35,5 @@ data(ORN)
 \seealso{
 \code{\link{points2network}}
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{visulization}

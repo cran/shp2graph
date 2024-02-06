@@ -30,5 +30,5 @@ This function returns differently for undirected and directed
 networks, where both In-degrees and Out-degrees are calculated for a directed network,
 and only degrees are returned for an undirected networks.
 }
-\author{Binbin Lu \email{lubinbin220@gmail.com}}
-\keyword{degree, node}
+\author{Binbin Lu \email{binbinlu@whu.edu.cn}}
+\keyword{node degree}
